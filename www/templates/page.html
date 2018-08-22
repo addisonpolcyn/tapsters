@@ -1,0 +1,46 @@
+<!-- A page that is currently of no use but reference-->
+<html>
+	<head>
+		<title>
+		</title>
+
+		<style>
+			body {
+				background: coral;
+			}
+			h1 {
+				color: purple;
+			}
+		</style>
+
+		<script>
+			function changeColor() {
+				document.getElementById("buttonc").style.background = "lightGreen";
+
+				testRequest();
+			}
+
+			function testRequest(){
+				console.log("hit");
+				var xhttp = new XMLHttpRequest();
+				
+				xhttp.onreadystatechange = function() {
+					if (this.readyState == 4 && this.status == 200) {
+						console.log("Connected to Web");
+						document.getElementById("buttonc").style.background = "pink";
+					}
+				};
+
+				xhttp.open("GET", "/home", true);
+				xhttp.send();
+			}
+		</script>
+
+	</head>
+
+	<body>
+		<h1>Welcome to Page 2.</h1>
+		<a href="http://127.0.0.1:50007/home">home</a>
+		<button id="buttonc" type="button" onclick="changeColor()">Welcome, click this to go back to home</button>
+	</body>
+</html>

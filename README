@@ -1,0 +1,32 @@
+Hello,
+
+ATTENTION
+LocalTaps is using python2.7 WILL NOT WORK WITH PYTHON 3+
+
+USAGE
+LocalTaps is a website that is currently run from localHost 127.0.0.1 and Port number 50007
+
+To use Local Taps run the server, "python newServer.py" and then open a browser and place "127.0.0.1:50007/index.html" in the url field
+
+newServer.py is the updated version of server.py: basically just use newServer.py, im only keeping server.py for reference right now
+
+PACKAGES
+pscycopg2 is a package that needs to be installed for the database to work, pip install psycopg2
+	- this allows us to communicate with PostgreSQL which you can download but is not necessary jsut need  to install psycopg2
+
+STUFF TO DO
+There is a bunch of shit to do, look to the to do list for now
+
+DESCRIPTIONS
+templates holds all the html files
+img holds all image files
+css holds all css stylesheets
+js holds all javascript scripts - porbably just put them in controllers
+
+index.html is the home file which should be loaded as the first thing
+
+RULES
+name all new files the same with just a different suffix like .js/.css/.whatever
+
+
+

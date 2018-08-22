@@ -1,0 +1,12 @@
+Some Quick stuff that needs to be done:
+1. in newServer.py the function loadFile() is kinda fucked up
+- it should read until the end of file regardless instead of just a fixed amount of bytes
+2. newServer.py, instead of loading files for each server response
+all files should be loaded up and kept in strings and then the strings should be sent for each request
+3. The function threaded should be inside a while loop and only drop connection when no longer getting response
+4. newServer.py should be non-blocking to increase performance (priority pretty low here also this gonna be tricky probably)
+
+
+Larger Problems:
+1. Login Signup is not finished
+2. Literally the whole thing is missing

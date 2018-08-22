@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <title>CSS Template</title>
+      
+      <style>
+     
+      * {
+          box-sizing: border-box;
+      }
+
+      body {
+        background: black;
+      }
+
+      /* TAB MENU */
+      #navbar {
+        margin: 0;
+        padding: 0;
+        background: #ccc;
+      }
+       
+      .nav ul {
+        list-style: none;
+        background-color: #444;
+        text-align: left;
+        padding: 0;
+        margin: 0;
+      }
+      .nav li {
+        font-family: "Gill Sans", sans-serif;
+        font-size: 1.2em;
+        line-height: 40px;
+        height: 40px;
+    
+        text-align: center;
+      }
+       
+      .nav a {
+        text-decoration: none;
+        color: #fff;
+        display: block;
+        transition: .3s background-color;
+      }
+       
+      .nav a:hover {
+        background-color: #005f5f;
+      }
+       
+      .nav a.active {
+        background-color: #fff;
+        color: #444;
+        cursor: default;
+      }
+       
+      @media screen and (min-width: 600px) {
+        .nav li {
+          width: 120px;
+          border-bottom: none;
+          height: 50px;
+          line-height: 50px;
+          font-size: 1.4em;
+        }
+        .nav li {
+          display: inline-block;
+          margin-right: ;
+        } 
+      }
+      /* TAB MENU */
+
+      .menu {
+          width: 25%;
+          float: left;
+          padding: 15px;
+          min-height: 1000px;
+          background: lightgray;
+         
+      }
+      
+	    .main {
+          width: 75%;
+          float: left;
+          padding: 15px;
+          min-height: 1000px;
+          background: white;
+      
+      }
+      </style>
+
+
+    </head>
+
+    <body>
+
+      <div class="nav" class="news" id="navbar">
+
+        <ul>
+          <li class="home" style="font-family: Brush Script Std;color:white;"><a href="http://127.0.0.1:50007/home">Local Taps</a></li>
+          <li class="news"><a class="active" href="http://127.0.0.1:50007/home/taps">Taps</a></li>
+          <li class="news"><a href="http://127.0.0.1:50007/home/brewers">Brewers</a></li>
+          <li class="about"><a href="#">About</a></li>
+          <li class="contact"><a onclick="document.getElementById('id01').style.display='block'">Login</a></li>
+        </ul>
+      </div>  
+
+      <div class="menu">
+        <ul>
+          <li>Settings</li>
+          <li>For Filtering</li>
+          <li>Beer</li>
+          <li>Stuff</li>
+        </ul>
+      </div>
+
+      <div class="main">
+        <!-- Embedded Google Map -->
+          <div id="googleMap" style="width:100%;height:400px;-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+            filter: grayscale(100%);
+          "></div>
+
+          <script>
+          function myMap() {
+          var mapProp= {
+              center:new google.maps.LatLng(37.7749,-122.4194),
+              zoom:9,
+          };
+          var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+          }
+          </script>
+
+          <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFcw3L5wIdbQwWPJRywGH5djonWc7CZnM&callback=myMap"></script>
+        <!-- Embedded Google Map -->
+        
+        <!-- SIGN UP/LOG IN PACKAGES -------------------------------------------------------------------------------->
+        <!-- LOGIN PACKAGE -- ~ signal login package -->
+          <style>
+          /* LOGIN/SIGN FORM STYLESHEET*/
+          /* Full-width input fields */
+          input[type=submit], input[type=password] {
+              width: 100%;
+              padding: 12px 20px;
+              margin: 8px 0;
+              display: inline-block;
+              border: 1px solid #ccc;
+              box-sizing: border-box;
+          }
+
+          /* Set a style for all buttons */
+          button {
+              background-color: #4CAF50;
+              color: white;
+              padding: 14px 20px;
+              margin: 8px 0;
+              border: none;
+              cursor: pointer;
+              width: 100%;
+          }
+
+          button:hover {
+              opacity: 0.8;
+          }
+
+          /* Extra styles for the cancel button */
+          .cancelbtn {
+              width: auto;
+              padding: 10px 18px;
+              background-color: #f44336;
+          }
+
+          /* Center the image and position the close button */
+          .imgcontainer {
+              text-align: center;
+              margin: 24px 0 12px 0;
+              position: relative;
+          }
+
+          img.avatar {
+              width: 10%;
+              border-radius: 50%;
+          }
+
+          .modal-container {
+              padding: 16px;
+          }
+
+          span.psw {
+              float: right;
+              padding-top: 16px;
+          }
+
+          /* The Modal (background) */
+          .modal {
+              display: none; /* Hidden by default */
+              position: fixed; /* Stay in place */
+              z-index: 1; /* Sit on top */
+              left: 0;
+              top: 0;
+              width: 100%; /* Full width */
+              height: 100%; /* Full height */
+              overflow: auto; /* Enable scroll if needed */
+              background-color: rgb(0,0,0); /* Fallback color */
+              background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+              padding-top: 20px;
+          }
+
+          /* Modal Content/Box */
+          .modal-content {
+              background-color: #fefefe;
+              margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+              border: 1px solid #888;
+              width: 80%; /* Could be more or less, depending on screen size */
+          }
+
+          /* The Close Button (x) */
+          .close {
+              position: absolute;
+              right: 25px;
+              top: 0;
+              color: #000;
+              font-size: 35px;
+              font-weight: bold;
+          }
+
+          .close:hover,
+          .close:focus {
+              color: red;
+              cursor: pointer;
+          }
+
+          /* Add Zoom Animation */
+          .animate {
+              -webkit-animation: animatezoom 0.6s;
+              animation: animatezoom 0.6s
+          }
+
+          @-webkit-keyframes animatezoom {
+              from {-webkit-transform: scale(0)} 
+              to {-webkit-transform: scale(1)}
+          }
+              
+          @keyframes animatezoom {
+              from {transform: scale(0)} 
+              to {transform: scale(1)}
+          }
+
+          /* Change styles for span and cancel button on extra small screens */
+          @media screen and (max-width: 300px) {
+              span.psw {
+                 display: block;
+                 float: none;
+              }
+              .cancelbtn {
+                 width: 100%;
+              }
+          }
+          /* LOGIN FORM */
+          </style>
+
+          <div id="id01" class="modal">
+
+            
+            <form class="modal-content animate" action="/login">
+              <h1 style="text-align: center;">Log In</h1>
+
+              <div class="imgcontainer">
+                <!--<span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>-->
+                <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar" class="avatar">
+              </div>
+
+              <h4 style="text-align: center;">Don't have an account? 
+                <a onclick="document.getElementById('signupForm').style.display='block';
+                document.getElementById('id01').style.display='none'" 
+                href="#signupForm">Join localtaps.com now</a>
+              </h4>
+
+              <div class="modal-container">
+                <label for="loginError" id="loginError" style="color: red;background: yellow"></label><br><br>
+                <label for="uname"><b>Username</b></label>
+                <input type="text" maxlength="30" placeholder="Enter Username" id="uname" name="uname" required>
+
+                <label for="psw"><b>Password</b></label>
+                <input type="password" maxlength="24" placeholder="Enter Password" id="pass" name="psw" required>
+                  
+                <button type="submit" id="loginButton" onclick="changeColor()">Login</button>
+                <label>
+                  <input type="checkbox" checked="checked" name="remember"> Remember me
+                </label>
+              </div>
+
+              <div class="modal-container" style="background-color:#f1f1f1">
+                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                <span class="psw">Forgot <a href="#">password?</a></span>
+              </div>
+            </form>
+
+            <script type="text/javascript">
+            // Get the modal
+            var modal = document.getElementById('id01');
+
+           // var num = 1;
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+
+            </script>
+          </div>
+        <!-- END OF LOGIN PACKAGE -->
+        <!-- SIGN UP PACKAGE -->
+        <div id="signupForm" class="modal">
+          <!--<span onclick="document.getElementById('signupForm').style.display='none'" class="close" title="Close Modal">&times;</span>-->
+          <form class="modal-content" action="/signup">
+            <div class="modal-container">
+              <h1>Sign Up</h1>
+              <p>Please fill in this form to create an account.</p>
+              <hr>
+              <label for="email"><b>Username</b></label>
+              <input type="text" maxlength="30" placeholder="Enter Username" id="newuname" name="email" required>
+
+              <label for="psw"><b>Password</b></label>
+              <input type="password" maxlength="24" placeholder="Enter Password" id="newpass" name="psw" required>
+
+              <label for="psw-repeat"><b>Repeat Password</b></label>
+              <input type="password" maxlength="24" placeholder="Repeat Password" id="newpass-repeat" name="psw-repeat" required>
+              
+              <label>
+                <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+              </label>
+
+              <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+              <div class="clearfix">
+                <button type="button" onclick="document.getElementById('signupForm').style.display='none'" class="cancelbtn">Cancel</button>
+                <button type="submit" class="signupbtn" onclick="signUp()">Sign Up</button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <script>
+        // Get the modal
+        var modal2 = document.getElementById('signupForm');
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal2) {
+                modal2.style.display = "none";
+            }
+        },
+
+        changeColor = function() {
+            //console.log(document.getElementById('uname').value);
+            //console.log(document.getElementById('pass').value);
+            var uname = document.getElementById('uname').value;
+            var pass = document.getElementById('pass').value;
+            console.log(uname);
+            console.log(pass);
+
+          /*  if(uname.length > 0 && pass.length > 0){
+              var xhttp = new XMLHttpRequest();
+              xhttp.onreadystatechange = function() {
+                  if (this.readyState == 4 && this.status == 200) {
+                     // Typical action to be performed when the document is ready:
+                     //document.getElementById("demo").innerHTML = xhttp.responseText;
+                     console.log("responseText from server: " + xhttp.responseText);
+                  }
+              };
+              xhttp.open("GET", "home", true);
+              xhttp.send();
+
+              document.getElementById('id01').style.display='none';
+            }*/
+        },
+
+        signUp = function() {
+          console.log(document.getElementById('newuname').value);
+          console.log(document.getElementById('newpass').value);
+          console.log(document.getElementById('newpass-repeat').value);
+          document.body.style.background = 'red';
+          document.getElementById('signupForm').style.display='none';
+        }
+        //~signals end
+        </script>
+
+        <!-- END OF SIGNUP PACKAGE -->
+        <!-- SIGN UP/LOG IN PACKAGES -------------------------------------------------------------------------------->
+         
+
+    </body>
+</html>  
