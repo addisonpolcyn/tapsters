@@ -1,5 +1,5 @@
 Some Quick stuff that needs to be done:
-1. in newServer.py the function loadFile() is kinda fucked up
+1. in newServer.py the function loadFile() is kinda screwed up
 - it should read until the end of file regardless instead of just a fixed amount of bytes
 2. newServer.py, instead of loading files for each server response
 all files should be loaded up and kept in strings and then the strings should be sent for each request
