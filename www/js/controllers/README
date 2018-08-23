@@ -1,0 +1,3 @@
+controllers is for all javascript files to accompany the templates
+
+controllers handles things like button clicks and such, it uses services as helper file to communicate with the backend
