@@ -15,7 +15,7 @@ pscycopg2 is a package that needs to be installed for the database to work, pip 
 	- this allows us to communicate with PostgreSQL which you can download but is not necessary jsut need  to install psycopg2
 
 STUFF TO DO
-There is a bunch of shit to do, look to the to do list for now
+There is a bunch of stuff to do, look to the to do list for now
 
 DESCRIPTIONS
 templates holds all the html files
