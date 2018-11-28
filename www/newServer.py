@@ -110,7 +110,7 @@ def threaded(conn):
 						#make a sql query send to database to check if account is there if is then allow auth
 						hostname = 'localhost'
 						username = 'postgres'
-						password = 'P15mac^new'
+						password = 'XXXXXXXX'
 						database = 'localTaps'
 
 						# Simple routine to run a query on a database and print the results:
